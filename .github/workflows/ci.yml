@@ -22,5 +22,5 @@ jobs:
           git config --local user.name "gmsy-Stu"
           git remote set-url origin https://${{ github.actor }}:${{ secrets.GH_TOKEN }}@github.com/${{ github.repository }}
           git pull --rebase
-          git commit --allow-empty -m "a commit a day keeps your girlfriend away"
+          git commit --allow-empty -m "a commit a day keeps your girlfriend away - $(TZ=Asia/Shanghai date '+%Y-%m-%d %H:%M:%S')"
           git push
