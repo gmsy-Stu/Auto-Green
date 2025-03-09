@@ -14,7 +14,7 @@ jobs:
       - name: Clone repository
         uses: actions/checkout@v2
         with:
-          token: ${{ secrets.GH_TOKEN }}
+          token: ${{ secrets.GITHUB_TOKEN }}
 
       - name: Auto green
         run: |
@@ -24,3 +24,4 @@ jobs:
           git pull --rebase
           git commit --allow-empty -m "one commit a day keeps your girlfriend away - $(TZ=Asia/Shanghai date '+%Y-%m-%d %H:%M:%S')"
           git push
+
