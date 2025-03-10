@@ -17,7 +17,7 @@ jobs:
           token: ${{ secrets.GH_TOKEN }}
 
       - name: Auto green
-        run: 
+        run: |
           git config --local user.email "mingyang_f@qq.com"
           git config --local user.name "gmsy-Stu"
           git remote set-url origin https://${{ github.actor }}:${{ secrets.GH_TOKEN }}@github.com/${{ github.repository }}
