@@ -14,13 +14,13 @@ jobs:
       - name: Clone repository
         uses: actions/checkout@v2
         with:
-          token: ${{ secrets.GH_TOKEN }}
+          token: ${{ secrets.ACTION_TOKEN }}
 
       - name: Auto green
         run: |
           git config --local user.email "mingyang_f@qq.com"
           git config --local user.name "gmsy-Stu"
-          git remote set-url origin https://${{ github.actor }}:${{ secrets.GH_TOKEN }}@github.com/${{ github.repository }}
+          git remote set-url origin https://${{ github.actor }}:${{ secrets.ACTION_TOKEN }}@github.com/${{ github.repository }}
           git pull --rebase
           git commit --allow-empty -m "one commit a day keeps your girlfriend away - $(TZ=Asia/Shanghai date '+%Y-%m-%d %H:%M:%S')"
           git push
